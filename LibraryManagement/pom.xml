@@ -37,9 +37,16 @@
   
         <!-- Oracle JDBC Driver -->  
         <dependency>  
-            <groupId>com.oracle.database.jdbc</groupId>  
-            <artifactId>ojdbc8</artifactId>  
-            <version>19.8.0.0</version> <!-- Use the appropriate version -->  
+            <groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc11-production</artifactId>
+			<version>21.3.0.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.oracle.database.ha</groupId>
+					<artifactId>simplefan</artifactId>
+				</exclusion>
+			</exclusions>
+			<type>pom</type>
         </dependency>  
   
         <!-- Validation API -->  

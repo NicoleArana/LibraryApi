@@ -1,0 +1,98 @@
+{
+  "info": {
+    "_postman_id": "e0e914a2-2f55-43fe-828f-0c11b8c7a5fd",
+    "name": "Patron API Testing",
+    "description": "Collection for testing Patron endpoints including CRUD operations and book borrowing functionality",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Patrons",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/patrons",
+        "description": "Retrieve a list of all patrons."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Patron By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/patrons/:id",
+        "description": "Retrieve a patron by their ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Create Patron",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"email\": \"jane.smith@example.com\",\n    \"phoneNumber\": \"555-0123\"\n}"
+        },
+        "url": "http://localhost:8080/api/patrons",
+        "description": "Create a new patron."
+      },
+      "response": []
+    },
+    {
+      "name": "Update Patron",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith-Jones\",\n    \"email\": \"jane.smith@example.com\",\n    \"phoneNumber\": \"555-0124\"\n}"
+        },
+        "url": "http://localhost:8080/api/patrons/:id",
+        "description": "Update a patron's information by their ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Patron",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:8080/api/patrons/:id",
+        "description": "Delete a patron by their ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Borrow Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:8080/api/patrons/:patronId/borrow/:bookId",
+        "description": "Allow a patron to borrow a book."
+      },
+      "response": []
+    },
+    {
+      "name": "Return Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:8080/api/patrons/borrow/:borrowId/return",
+        "description": "Return a borrowed book."
+      },
+      "response": []
+    }
+  ]
+}
